@@ -14,6 +14,7 @@ int yyerror(char *s) {
 "do"  { return DO;}
 "int" { return INT;}
 "char" { return CHAR;}
+"void" { return VOID;}
 ">="  { return GE;}
 "<="  { return LE;}
 "=="  { return EQ;}
