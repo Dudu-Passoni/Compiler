@@ -19,6 +19,7 @@
 %token PRINTLN
 %token PRINT
 %token INT
+%token VOID
 %left AND OR
 %left '>' '<' NE EQ GE LE
 %left '+' '-'
@@ -28,7 +29,8 @@
 
        
 	
-Prog : Statement_Seq
+Prog : Function Prog
+	|
 	;
 	
 	
@@ -74,6 +76,43 @@ While_Statement:
 
 Do_While_Statement:
 	  DO Compound_Statement WHILE '(' Exp ')' ';'   
+	;
+	
+Function:
+	Tipof ID '(' Args2 ')' '{' Decls2 Statement_Seq '}' 
+	;
+	
+Args2:
+	Args2 ',' Decl
+	| Decl
+	|
+	;
+
+Decl : Tipo ID
+	;
+Decls2:
+	Decl2 ';' Decls2
+	|
+	;
+	
+Decl2:
+	Tipo Vars
+	;
+	
+Vars: 
+	Vars ',' ID 
+	| ID
+	;	
+	
+Tipo:
+	INT
+	| CHAR
+	;
+
+Tipof:
+	INT
+	| CHAR
+	| VOID
 	;
 			
 Exp : Exp '+' Exp  
