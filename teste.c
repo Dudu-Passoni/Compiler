@@ -1,10 +1,6 @@
-int main() {
-  int a,b,c, cont, aux;
-  char ch;
-  c = 10;
-}
-void teste(int a, char b) {
-  int a,b,c, cont, aux;
-  char ch;
-  c = 10;
+main() {
+	int a,b,c,aux;
+	a = 550;
+	b = 30;
+	c = 40;
 }
